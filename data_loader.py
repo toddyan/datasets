@@ -49,6 +49,17 @@ def load_iris(iris_dir):
             label.append([float(s) for s in line.split('\t')])
     return {"data":np.array(data),"label":np.array(label)}
 
-
+def load_leukemia(leukemia_dir):
+    data = []
+    with open(leukemia_dir + "/data") as infile:
+        for line in infile.readlines():
+            line = line.strip()
+            data.append([float(s) for s in line.split('\t')])
+    label = []
+    with open(leukemia_dir + "/target") as infile:
+        for line in infile.readlines():
+            line = line.strip()
+            label.append([float(s) for s in line.split('\t')])
+    return {"data":np.array(data),"label":np.array(label)}
 
 
